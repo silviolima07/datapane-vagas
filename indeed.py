@@ -42,8 +42,8 @@ import pandas as pd
 import datapane as dp
 from datetime import date
 
-import seaborn as sns
-sns.set_theme(style="darkgrid")
+#import seaborn as sns
+#sns.set_theme(style="darkgrid")
 
 import plotly.express as px
 

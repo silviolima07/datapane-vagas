@@ -30,7 +30,10 @@ jobs:
       run: pip install altair
     
     - name: Install datapane                               
-      run: pip install datapane    
+      run: pip install datapane
+
+    - name: Install plotly-express                             
+      run: pip install plotly-express      
  
     - name: running script indeed.py                                
       run: python indeed.py       
