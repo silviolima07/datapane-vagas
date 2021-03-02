@@ -1,5 +1,8 @@
 name: Push Workflow                                               
-on: push                                                  
+on:
+  schedule:
+    # run at 5pm every Friday
+    - cron:  '6 19 * * *'                                                 
 jobs:                           
  
   publish_datapane:                            
