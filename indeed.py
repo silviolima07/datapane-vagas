@@ -52,7 +52,7 @@ cidades = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/Dataset/cidades.cs
 df_vagas = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/Dataset/vagas-ds.csv")
 
 
-fig = px.histogram(df_vagas, x="estado", color="vaga", title='Total Vagas por Estado', hover_name ='vaga')
+fig = px.histogram(df_vagas, x="estado", color="vaga", title='Total Vagas', hover_name ='vaga')
 
 from folium import plugins
 import folium
