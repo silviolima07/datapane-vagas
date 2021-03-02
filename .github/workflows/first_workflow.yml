@@ -26,9 +26,11 @@ get-posts-job:
       with:                                 
         python-version: '3.8'          
                                                   
-    - name: Install Scrapy                               
+    - name: Install altair                              
       run: pip install altair
-      run: pip install datapane        
+    
+    - name: Install datapane                               
+      run: pip install datapane    
  
     - name: Get TDS posts about GitHub Actions                                 
       run: python indeed.py       
