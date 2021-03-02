@@ -1,8 +1,5 @@
-name: Schedule Workflow                                              
-on:
-  schedule:
-    # run at 5pm every Friday
-    - cron:  '32 18 * * *'                                                  
+name: Push Workflow                                               
+on: push                                                  
 jobs:                         
   first-job:                           
     name: Say hi                           
