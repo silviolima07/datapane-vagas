@@ -34,6 +34,9 @@ Original file is located at
 #sh.setFormatter(formatter)
 #root_logger.addHandler(sh)
 
+!pip install altair
+!pip install datapane
+
 import altair as alt
 import pandas as pd
 import datapane as dp
