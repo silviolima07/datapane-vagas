@@ -1,8 +1,9 @@
-name: Push Workflow                                               
+name: Push Workflow                                                
 on:
   schedule:
-    # run at 5pm every Friday
-    - cron:  '6 19 * * *'                                                 
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/5 * * * *
+    
 jobs:                           
  
   publish_datapane:                            
