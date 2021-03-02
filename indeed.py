@@ -48,6 +48,7 @@ import plotly.express as px
 dp.login(token="429c0773e39cc7b0a0a2aa7ed74e85edeea6d7b5")
 
 
+
 cidades = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/Dataset/cidades.csv")
 df_vagas = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/Dataset/vagas-ds.csv")
 
