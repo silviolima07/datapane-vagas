@@ -1,21 +1,9 @@
 name: Push Workflow                                               
 on: push                                                  
-jobs:                         
-  first-job:                           
-    name: Say hi                           
-    runs-on: ubuntu-latest                           
-    steps:                           
-    - name: Print a greeting                             
-      run: echo Hi from our first workflow!
-      
-    - name: Show ASCII greeting                             
-      uses: mscoutermarsh/ascii-art-action@master   
-      with:                               
-        text: 'SILVIO'
-        
-
-  get-posts-job:                            
-    name: Get TDS posts                            
+jobs:                           
+ 
+  publish_datapane:                            
+    name: ubuntu                            
     runs-on: ubuntu-latest     
     steps:                             
     - name: Check-out the repo under $GITHUB_WORKSPACE                               
