@@ -49,8 +49,8 @@ dp.login(token="429c0773e39cc7b0a0a2aa7ed74e85edeea6d7b5")
 
 
 
-cidades = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/Dataset/cidades.csv")
-df_vagas = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/Dataset/vagas-ds.csv")
+cidades = pd.read_csv("cidades.csv")
+df_vagas = pd.read_csv("vagas-ds.csv")
 
 
 fig = px.histogram(df_vagas, x="estado", color="vaga", title='Total Vagas', hover_name ='vaga')
