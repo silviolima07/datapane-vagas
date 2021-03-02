@@ -3,7 +3,7 @@ on: push
 jobs:                           
  
   publish_datapane:                            
-    name: Run on ubuntu and setting Python 3.8                          
+    name: publish datapane indeed                        
     runs-on: ubuntu-latest     
     steps:                             
     - name: Check-out the repo under $GITHUB_WORKSPACE                               
