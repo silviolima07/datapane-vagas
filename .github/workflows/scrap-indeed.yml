@@ -18,8 +18,10 @@ jobs:
       with:
         python-version: 3.9
         
-    - name: Install libs
+    - name: Install lib bs4
       run: pip install bs4
+      
+    - name: Install lib selenium  
       run: pip install selenium
       
     - name: Install scrap cargos
