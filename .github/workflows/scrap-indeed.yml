@@ -30,12 +30,23 @@ jobs:
       run: pip install pandas  
     
     
-    - name: Install scrap cargos
+    - name: Scrap - EML
       run: |
-        python scrap/scrap-indeed.py 'engenheiro de machine learning'
+        python scrap/scrap-indeed.py 'engenheiro de machine learning' 
         
+    - name: Scrap - ED
+      run: |
+        python scrap/scrap-indeed.py 'engenheiro de dados'
+        
+    - name: Scrap - AD
+      run: |
+        python scrap/scrap-indeed.py 'analista de dados'
+        
+    - name: Scrap - CD
+      run: |
+        python scrap/scrap-indeed.py 'cientista de dados'   
     - name: where is the directory
       run: pwd
     - name: List directory  
-      run: ls -la CSV      
+      run: ls -la    
 
