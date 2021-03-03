@@ -110,7 +110,7 @@ df_final = df.drop_duplicates()
 cargo = CARGO.replace(' ', '_')
 print("\nCargo:", cargo)
 filename = 'indeed_'+cargo+'.csv'
-HOME_CSV = ''
+HOME_CSV = './CSV'
 
 df_final.to_csv(HOME_CSV+'/'+filename, index=False, header=True)
 print("Diretório CSV:", HOME_CSV)
