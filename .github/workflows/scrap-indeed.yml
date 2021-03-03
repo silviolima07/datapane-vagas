@@ -7,7 +7,7 @@ on:
    workflow_dispatch:
 
 jobs:
-  scrap:
+  scrap cargos:
 
     runs-on: ubuntu-latest
 
@@ -34,17 +34,17 @@ jobs:
       run: |
         python scrap/scrap-indeed.py 'engenheiro de machine learning' 
         
-    - name: Scrap - ED
-      run: |
-        python scrap/scrap-indeed.py 'engenheiro de dados'
+    #- name: Scrap - ED
+    #  run: |
+    #    python scrap/scrap-indeed.py 'engenheiro de dados'
         
-    - name: Scrap - AD
-      run: |
-        python scrap/scrap-indeed.py 'analista de dados'
+    #- name: Scrap - AD
+    #  run: |
+    #    python scrap/scrap-indeed.py 'analista de dados'
         
-    - name: Scrap - CD
-      run: |
-        python scrap/scrap-indeed.py 'cientista de dados'   
+    #- name: Scrap - CD
+    #  run: |
+    #    python scrap/scrap-indeed.py 'cientista de dados'   
     - name: where is the directory
       run: pwd
     - name: List directory  
