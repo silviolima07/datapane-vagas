@@ -25,6 +25,8 @@ jobs:
       run: pip install selenium
       
     - name: Install lib pandas  
+    
+    
       run: pip install pandas  
     
     
@@ -35,5 +37,5 @@ jobs:
     - name: where is the directory
       run: pwd
     - name: List directory  
-      run: ls -la      
+      run: ls -la CSV      
 
