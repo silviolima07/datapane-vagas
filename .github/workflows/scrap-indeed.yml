@@ -24,6 +24,10 @@ jobs:
     - name: Install lib selenium  
       run: pip install selenium
       
+    - name: Install lib pandas  
+      run: pip install pandas  
+    
+    
     - name: Install scrap cargos
       run: |
         python scrap/scrap-indeed.py 'engenheiro de machine learning'
