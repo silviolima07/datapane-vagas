@@ -31,4 +31,8 @@ jobs:
     - name: Install scrap cargos
       run: |
         python scrap/scrap-indeed.py 'engenheiro de machine learning'
+        
+    - name: List directory
+      run: pwd
+      run: ls -la      
 

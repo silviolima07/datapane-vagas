@@ -111,7 +111,7 @@ cargo = CARGO.replace(' ', '_')
 print("\nCargo:", cargo)
 filename = 'indeed_'+cargo+'.csv'
 #HOME_CSV = './CSV'
-
+print("\nCriando arquivo CSV: ", filename)
 df_final.to_csv(filename, index=False, header=True)
 #print("Diretório CSV:", HOME_CSV)
 #print("Criado arquivo:", filename)
