@@ -32,7 +32,8 @@ jobs:
       run: |
         python scrap/scrap-indeed.py 'engenheiro de machine learning'
         
-    - name: List directory
+    - name: where is the directory
       run: pwd
+    - name: List directory  
       run: ls -la      
 
