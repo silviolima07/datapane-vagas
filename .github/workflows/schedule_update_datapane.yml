@@ -1,8 +1,8 @@
-name: WF - Schedule update                                               
+name: Schedule publish datapane                                              
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 9,14,17 * * 1-5'
+    - cron:  '0,30 9,14,17 * * 1-5'
     
 jobs:                           
  
