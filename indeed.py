@@ -102,4 +102,4 @@ r = dp.Report(
     dp.Plot(mapa))
 
 # Publish
-r.publish(name=f'Vagas em Data Science', open=True, description=f'Vagas anunciadas no indeed.com')
+r.publish(name=f'Vagas em Data Science', open=True, description=f'Vagas coletadas via Web Scrap - primeiras 15 páginas de cada cargo')
