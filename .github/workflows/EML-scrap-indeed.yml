@@ -1,0 +1,44 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Scrap EML
+
+on:
+   workflow_dispatch:
+
+jobs:
+  scrap_EML:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+        
+    - name: Install lib bs4
+      run: pip install bs4
+      
+    - name: Install lib selenium  
+      run: pip install selenium
+      
+    - name: Install lib pandas  
+    
+    
+      run: pip install pandas  
+    
+    
+    - name: Scrap - EML
+      run: |
+        python scrap/scrap-indeed.py 'engenheiro de machine learning' 
+              
+        
+    - name: Moving csv files to CSV directory
+      run: mv indeed*.csv CSV
+      
+    - name: List directory  CSV
+      run: ls -la CSV
+      
+
