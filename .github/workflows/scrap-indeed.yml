@@ -47,9 +47,9 @@ jobs:
       run: pwd
       
     - name: List directory  
-      run: mv indeed* CSV
+      run: pwd
       
     - name: List directory CSV 
-      run: ls CSV 
+      run: pwd
       
 
