@@ -44,7 +44,7 @@ jobs:
       run: pwd  
         
     - name: where is the directory
-      run: mv "indeed*.csv" CSV
+      run: mv indeed*.csv CSV
       
     - name: List directory  
       run: ls -la CSV
