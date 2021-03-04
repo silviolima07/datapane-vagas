@@ -7,7 +7,7 @@ on:
    workflow_dispatch:
 
 jobs:
-  scrap cargos:
+  scrap_cargos:
 
     runs-on: ubuntu-latest
 
@@ -35,19 +35,17 @@ jobs:
         python scrap/scrap-indeed.py 'engenheiro de machine learning' 
         
     - name: Scrap - ED
-      run: |
-        ls -la
+      run: ls -la
         
     - name: Scrap - AD
-      run: |
-        ls -la
+      run: ls -la
         
     - name: Scrap - CD
-      run: |
-        pwd  
+      run: pwd  
         
     - name: where is the directory
       run: pwd
+      
     - name: List directory  
       run: mv indeed* CSV
       
