@@ -36,15 +36,16 @@ jobs:
         
     - name: Scrap - ED
       run: |
-        #python scrap/scrap-indeed.py 'engenheiro de dados'
+        ls -la
         
     - name: Scrap - AD
       run: |
-        #python scrap/scrap-indeed.py 'analista de dados'
+        ls -la
         
     - name: Scrap - CD
       run: |
-        #python scrap/scrap-indeed.py 'cientista de dados'   
+        pwd  
+        
     - name: where is the directory
       run: pwd
     - name: List directory  
