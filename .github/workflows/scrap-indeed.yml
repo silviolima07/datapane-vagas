@@ -35,13 +35,16 @@ jobs:
         python scrap/scrap-indeed.py 'engenheiro de machine learning' 
         
     - name: Scrap - ED
-      run: ls -la
+      run: |
+        python scrap/scrap-indeed.py 'engenheiro de dados'
         
     - name: Scrap - AD
-      run: ls -la
+      run: |
+        python scrap/scrap-indeed.py 'analista de dados'
         
     - name: Scrap - CD
-      run: pwd  
+      run: |
+        python scrap/scrap-indeed.py 'cientista de dados'      
         
     - name: where is the directory
       run: mv indeed*.csv CSV
