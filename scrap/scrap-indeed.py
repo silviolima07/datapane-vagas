@@ -15,7 +15,7 @@ import sys
 options = FirefoxOptions()
 options.add_argument('-headless')
 driver = Firefox(executable_path="/usr/bin/geckodriver", options=options)
-wait = WebDriverWait(driver, timeout=20)
+wait = WebDriverWait(driver, timeout=40)
 #print ("Headless Firefox Initialized")
 
 # Informacoes de interesse na busca no indeed
@@ -56,7 +56,7 @@ i=10
 
    
 driver.get("https://br.indeed.com/empregos?as_ttl=&l=Brasil&sort=date&radius=25&start=" + str(i))
-driver.implicitly_wait(10)
+driver.implicitly_wait(40)
 
 # Advanced search
 advanced_search = driver.find_element_by_xpath("//a[contains(text(),'Busca Avançada de Vagas')]")
@@ -110,7 +110,6 @@ df_final = df.drop_duplicates()
 cargo = CARGO.replace(' ', '_')
 print("\nCargo:", cargo)
 filename = 'indeed_'+cargo+'.csv'
-#HOME_CSV = 'CSV'
 print("\nCriando arquivo CSV: ", filename)
 df_final.to_csv(filename, index=False, header=True)
 	

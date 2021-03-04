@@ -28,13 +28,13 @@ def buscar_campos(driver, url_page, total_vagas):
     if (pagina_final < pagina_limite):
         pagina_limite = pagina_final
     
-    print("Serão pesquisadas ", int(pagina_limite/10), "paginas")
+    #print("Serão pesquisadas ", int(pagina_limite/10), "paginas")
 
     for n in range(0,pagina_limite,10):
         
         #print("URL pesquisada:", url_page+str(n))
         driver.get(url_page+str(n))
-        driver.implicitly_wait(5)
+        driver.implicitly_wait(20)
         all_jobs = driver.find_elements_by_class_name('result')
 
         for job in all_jobs:
@@ -79,7 +79,7 @@ def buscar_campos(driver, url_page, total_vagas):
             
             link_url.append(url)
             
-        print("Page: {}".format(str(page)))
+        #print("Page: {}".format(str(page)))
         page=page+1
        
 
