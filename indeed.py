@@ -38,9 +38,12 @@ import altair as alt
 import pandas as pd
 import datapane as dp
 from datetime import date
-
-
+from folium import plugins
+import folium
 import plotly.express as px
+
+
+
 
 # Sign-in with your unique token
 dp.login(token="429c0773e39cc7b0a0a2aa7ed74e85edeea6d7b5")
@@ -50,11 +53,23 @@ dp.login(token="429c0773e39cc7b0a0a2aa7ed74e85edeea6d7b5")
 cidades = pd.read_csv("cidades.csv")
 df_vagas = pd.read_csv("vagas-ds.csv")
 
+##########################
 
-fig = px.histogram(df_vagas, x="estado", color="vaga", title='Total Vagas', hover_name ='vaga')
+fig1 = px.histogram(df_vagas, x="estado", color="vaga", title=' ', hover_name ='vaga')
 
-from folium import plugins
-import folium
+#fig1.show()
+
+##########################
+
+fig2 = px.histogram(df_vagas, x="nivel", color="nivel", hover_name ='nivel', facet_col= 'vaga')
+
+##########################
+
+fig3 = px.histogram(df_vagas, x="vaga", color="vaga", hover_name ='vaga')
+
+##########################
+
+# Mapa do Brasil
 
 coordenadas=[]
 for lat,lng in zip(df_vagas.latitude,df_vagas.longitude):
@@ -65,22 +80,26 @@ mapa = folium.Map(location=[-15.788497,-47.879873],zoom_start=4,tiles='Stamen To
 mapa.add_child(plugins.HeatMap(coordenadas))
 
 ####
-title_html = '''
-             <h3 align="center" style="font-size:30px"><b>Heatmap de vagas</br></br></b></h3>
-             '''
-mapa.get_root().html.add_child(folium.Element(title_html))
+#title_html = '''
+#             <h3 align="center" style="font-size:20px"><b>Heatmap de vagas pelo Brasil</br></br></b></h3>
+#             '''
+#mapa.get_root().html.add_child(folium.Element(title_html))
 
-mapa
+#######################
+
 
 # Create report
 r = dp.Report(
-    f'## Total Vagas por Estado',
-    f'#### - Analista de Dados, Cientista de Dados',
-    f'#### - Engenheiro de Machine Learning e Engenheiro de Dados',
-    dp.Plot(fig),
-    dp.Plot(mapa),
-
-)
+    f'### Vagas em Data Science',
+    f'#### - Analista de Dados, Cientista de Dados, Engenheiro de Machine Learning e Engenheiro de Dados',
+    f'### Total Vagas',
+    dp.Plot(fig3),
+    f'### Total Vagas por Estado',
+    dp.Plot(fig1),
+    f'### Total Vagas por Nivel',
+    dp.Plot(fig2),
+    f'### Heatmap de Vagas no Brasil',
+    dp.Plot(mapa))
 
 # Publish
 r.publish(name=f'Vagas em Data Science', open=True, description=f'Vagas anunciadas no indeed.com')
