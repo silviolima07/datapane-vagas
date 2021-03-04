@@ -34,10 +34,10 @@ jobs:
       run: |
         python scrap/scrap-indeed.py 'cientista de dados'      
         
-    - name: Moving csv files to CSV directory
+    - name: Creating CSV directory
       run: mkdir CSV
       
-    - name: List directory  CSV
+    - name: Moving csv file to CSV
       run: mv indeed*.csv CSV
       
     - name: List directory  CSV
