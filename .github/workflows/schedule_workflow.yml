@@ -2,7 +2,7 @@ name: WF - Schedule update 30 min
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/5 * * * *'
+    - cron:  '*/30 * * * *'
     
 jobs:                           
  
