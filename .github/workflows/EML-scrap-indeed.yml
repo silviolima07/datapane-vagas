@@ -34,10 +34,7 @@ jobs:
       run: |
         python scrap/scrap-indeed.py 'engenheiro de machine learning' 
               
-        
-    - name: Creating CSV directory
-      run: mkdir CSV
-      
+          
     - name: Moving csv file to CSV
       run: mv indeed*.csv CSV
       
