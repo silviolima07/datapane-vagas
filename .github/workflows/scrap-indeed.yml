@@ -50,6 +50,6 @@ jobs:
       run: mv indeed* CSV
       
     - name: List directory CSV 
-      run: ls ~/CSV 
+      run: ls CSV 
       
 
