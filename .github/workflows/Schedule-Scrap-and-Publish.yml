@@ -34,6 +34,9 @@ jobs:
     - name: Scraping data EML and publishing datapane
       run: |
         python scrap/scrap-indeed.py 'engenheiro de machine learning'
+        mv indeed*csv CSV
+        ls -la CSV
+        python tratamento_dados.py
         ls -la
         python indeed.py
         
