@@ -1,10 +1,10 @@
 name: Schedule publish datapane                                              
 on:
-
-  workflow_dispatch:
- 
-    
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '5 9,12,15,18 * * 1-5'
 jobs:                           
+ 
  
   publish_datapane:                            
     name: publish datapane indeed                        
