@@ -77,7 +77,7 @@ df_AD2['nivel'] = np.where(df_AD2.Cargo == 'analista de dados senior', 'senior '
 
 
 
-df_AD2['Cargo'] = remove_accents2(df_AD2['Cargo'])
+df_AD2['Cargo'] = remove_accents(df_AD2['Cargo'])
 
 df_AD2 = df_AD2[df_AD2['Cargo'].str.contains(r'analista de (?!$)')]
 df_AD2['vaga'] = 'analista de dados'
@@ -89,7 +89,7 @@ df_AD2['vaga'] = 'analista de dados'
 
 """
 
-df_CD['Cargo'] = remove_accents2(df_CD['Cargo'])
+df_CD['Cargo'] = remove_accents(df_CD['Cargo'])
 
 df_CD2 = df_CD[df_CD['Cargo'].str.contains(r'cientista de (?!$)')]
 df_CD2['vaga'] = 'cientista de dados'
