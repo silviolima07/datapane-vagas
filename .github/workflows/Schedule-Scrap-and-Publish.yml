@@ -31,7 +31,7 @@ jobs:
     - name: Install plotly-express                             
       run: pip install plotly-express  
         
-    - name: Scraping data EML and publishing datapane
+    - name: Scraping data and publishing datapane
       run: |
         python scrap/scrap-indeed.py 'engenheiro de machine learning'
         python scrap/scrap-indeed.py 'engenheiro de dados'
