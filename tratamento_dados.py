@@ -64,7 +64,7 @@ df_AD
 
 """### Tratemento no dataset AD"""
 
-df_AD['Cargo'] = remove_accents2(df_AD['Cargo'])
+df_AD['Cargo'] = remove_accents(df_AD['Cargo'])
 
 temp_A = df_AD.query('Cargo.str.contains("analista de dados")', engine='python') # filtra apenas Analista de dados
 
@@ -98,7 +98,7 @@ df_CD2['nivel'] = np.where(df_CD2.Cargo == 'cientista de dados - senior', 'senio
 
 """### Tratemento no dataset EML"""
 
-df_EML['Cargo'] = remove_accents2(df_EML['Cargo'])
+df_EML['Cargo'] = remove_accents(df_EML['Cargo'])
 
 df_EML2 = df_EML[df_EML['Cargo'].str.contains(r'de machine learning')]
 
@@ -107,7 +107,7 @@ df_EML2['nivel'] = 'sem informacao'
 
 """### Tratemento no dataset ED"""
 
-df_ED['Cargo'] = remove_accents2(df_ED['Cargo'])
+df_ED['Cargo'] = remove_accents(df_ED['Cargo'])
 
 df_ED2 = df_ED[df_ED['Cargo'].str.contains(r'engenheiro de dados')]
 
@@ -135,7 +135,7 @@ df3['Local'] = local_brasil
 df3[['cidade','estado']] = df3.Local.str.split(',', n=1, expand=True)
 
 
-df3['cidade']= remove_accents2(df3['cidade'])
+df3['cidade']= remove_accents(df3['cidade'])
 
 df3 = pd.merge(df3, df_cidade, on = 'cidade')
 
