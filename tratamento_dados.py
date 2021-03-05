@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
-
+import re
 
 def remove_accents(coluna):
     text=[]
