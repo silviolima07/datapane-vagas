@@ -26,9 +26,6 @@ jobs:
       
     - name: Install lib pandas  
       run: pip install pandas
-      
-    - name: Install re  
-      run: pip install re  
     
     
     - name: Scrap - EML
