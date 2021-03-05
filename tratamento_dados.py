@@ -44,7 +44,7 @@ CD = 'CSV/indeed_cientista_de_dados.csv'
 EML = 'CSV/indeed_engenheiro_de_machine_learning.csv'
 ED = 'CSV/indeed_engenheiro_de_dados.csv'
 
-cidades = '/content/cidades.csv'
+cidades = 'cidades.csv'
 
 
 df_AD = pd.read_csv(AD, encoding="utf8")
