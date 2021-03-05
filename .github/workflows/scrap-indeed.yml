@@ -52,4 +52,10 @@ jobs:
     - name: List directory  CSV
       run: ls -la
       
+    - name: Tratar dados
+      run: python tratamento_dados.py
+      
+    - name: List directory 
+      run: ls -la  
+      
 
