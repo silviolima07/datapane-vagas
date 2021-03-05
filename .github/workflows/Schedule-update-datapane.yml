@@ -3,9 +3,8 @@ defaults:
     working-directory: ./CSV
 name: Schedule publish datapane                                              
 on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '5 9,12,15,16,18 * * 1-5'
+   workflow_dispatch:
+   
 jobs:                           
  
  
