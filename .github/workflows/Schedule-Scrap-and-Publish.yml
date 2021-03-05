@@ -23,14 +23,15 @@ jobs:
       run: pip install pandas  
     
         
-    - name: Scrap - AD
+    - name: Scraping data AD
       run: |
         python scrap/scrap-indeed.py 'analista de dados'
                    
     - name: List directory
       run: ls -la
 
-  publish_datapane:                            
+  publish_datapane:
+    needs: scrap_AD
     name: publish datapane indeed                        
     runs-on: ubuntu-latest     
     steps:                             
