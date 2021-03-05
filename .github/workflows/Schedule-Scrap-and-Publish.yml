@@ -3,7 +3,7 @@ on:
    workflow_dispatch:
    
 jobs:                          
-  scrap_AD:
+  install_packages:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,18 +30,14 @@ jobs:
 
     - name: Install plotly-express                             
       run: pip install plotly-express  
-        
-    - name: Scraping data and publishing datapane
-      run: |
-        python scrap/scrap-indeed.py 'engenheiro de machine learning'
-        python scrap/scrap-indeed.py 'engenheiro de dados'
-        python scrap/scrap-indeed.py 'cientista de dados'
-        python scrap/scrap-indeed.py 'analista de ddos'
-        mv indeed*csv CSV
-        ls -la CSV
-        python tratamento_dados.py
-        ls -la
-        python indeed.py
+     
+        scrap_EML:
+           runs-on: ubuntu-latest
+           steps:
+             - name: Scraping data EML
+               needs: [install_packages]
+               run: python scrap/scrap-indeed.py 'engenheiro de machine learning'
+  
         
                    
     
