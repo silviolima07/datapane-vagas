@@ -34,7 +34,7 @@ def buscar_campos(driver, url_page, total_vagas):
         
         #print("URL pesquisada:", url_page+str(n))
         driver.get(url_page+str(n))
-        driver.implicitly_wait(20)
+        driver.implicitly_wait(40)
         all_jobs = driver.find_elements_by_class_name('result')
 
         for job in all_jobs:
