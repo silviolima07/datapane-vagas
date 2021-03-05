@@ -23,9 +23,9 @@ jobs:
       run: pip install pandas  
     
         
-    - name: Scraping data AD
+    - name: Scraping data EML
       run: |
-        python scrap/scrap-indeed.py 'analista de dados'
+        python scrap/scrap-indeed.py 'engenheiro de machine learning'
                    
     - name: List directory
       run: ls -la
@@ -34,14 +34,7 @@ jobs:
     needs: scrap_AD
     name: publish datapane indeed                        
     runs-on: ubuntu-latest     
-    steps:                             
-    - name: Check-out the repo under $GITHUB_WORKSPACE                               
-      uses: actions/checkout@v2         
-                                                  
-    - name: Set up Python 3.8                               
-      uses: actions/setup-python@v2                               
-      with:                                 
-        python-version: '3.8'          
+    steps:                                     
                                                   
     - name: Install altair                              
       run: pip install altair
