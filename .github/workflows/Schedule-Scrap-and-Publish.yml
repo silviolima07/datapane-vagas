@@ -21,21 +21,7 @@ jobs:
       
     - name: Install lib pandas  
       run: pip install pandas  
-    
-        
-    - name: Scraping data EML
-      run: |
-        python scrap/scrap-indeed.py 'engenheiro de machine learning'
-                   
-    - name: List directory
-      run: ls -la
-
-  publish_datapane:
-    needs: scrap_AD
-    name: publish datapane indeed                        
-    runs-on: ubuntu-latest     
-    steps:                                     
-                                                  
+      
     - name: Install altair                              
       run: pip install altair
     
@@ -43,8 +29,14 @@ jobs:
       run: pip install datapane
 
     - name: Install plotly-express                             
-      run: pip install plotly-express      
-      
-    - name: Listar directory                            
-      run: ls -la  
+      run: pip install plotly-express  
+        
+    - name: Scraping data EML and publishing datapane
+      run: |
+        python scrap/scrap-indeed.py 'engenheiro de machine learning'
+        ls -la
+        python indeed.py
+        
+                   
+    
 
