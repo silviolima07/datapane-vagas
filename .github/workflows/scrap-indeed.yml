@@ -25,9 +25,10 @@ jobs:
       run: pip install selenium
       
     - name: Install lib pandas  
-    
-    
-      run: pip install pandas  
+      run: pip install pandas
+      
+    - name: Install re  
+      run: pip install re  
     
     
     - name: Scrap - EML
