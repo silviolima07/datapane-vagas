@@ -53,6 +53,19 @@ dp.login(token="429c0773e39cc7b0a0a2aa7ed74e85edeea6d7b5")
 cidades = pd.read_csv("cidades.csv")
 df_vagas = pd.read_csv("vagas-ds.csv")
 
+df_AD = df_vagas.loc[df_vagas.vaga == 'analista de dados']
+df_CD = df_vagas.loc[df_vagas.vaga == 'cientista de dados']
+df_ED = df_vagas.loc[df_vagas.vaga == 'engenheiro de dados']
+df_EML = df_vagas.loc[df_vagas.vaga == 'engenheiro de machine learning']
+colunas = ['Local', 'Empresa', 'Descricao','Link']
+
+df_AD.reset_index(drop=True, inplace=True)
+df_CD.reset_index(drop=True, inplace=True)
+df_ED.reset_index(drop=True, inplace=True)
+df_EML.reset_index(drop=True, inplace=True)
+
+
+
 ##########################
 
 fig1 = px.histogram(df_vagas, x="estado", color="vaga", title=' ', hover_name ='vaga')
@@ -87,19 +100,67 @@ mapa.add_child(plugins.HeatMap(coordenadas))
 
 #######################
 
+# Create report
+
+r = dp.Report(
+    dp.Page(
+       label='Dashes',
+       blocks=[
+               "#### Heatmap de Vagas pelo Brasil", 
+               dp.Plot(mapa),
+               "#### Total Vagas", 
+               dp.Plot(fig3),
+               "#### Total Vagas por Estado", 
+               dp.Plot(fig1),
+               "#### Total Vagas por Nível", 
+               dp.Plot(fig2)
+               ]
+     ),
+    dp.Page(
+       label='Cientista de Dados',
+       blocks=["#### Vagas - Cientista de Dados",
+       dp.DataTable(df_CD[colunas], label="Cientista de Dados")]
+     ),
+    dp.Page(
+       label='Analista de Dados',
+       blocks=["#### Vagas Analista de Dados", 
+       dp.DataTable(df_AD[colunas], label= "Analista de Dados")]
+     ),
+    dp.Page(
+       label='Engenheiro de Dados',
+       blocks=["#### Vagas - Engenheiro de Dados", 
+       dp.DataTable(df_ED[colunas], label = "Engenheiro de Dados")]
+     ),
+    dp.Page(
+       label='Engenheiro de Machine Learning',
+       blocks=["#### Vagas - Engenheiro de Machine Learning", 
+       dp.DataTable(df_EML[colunas], label = "Engenheiro de Machine Learning")]
+     )
+    
+
+    
+    
+
+    )
+r
+# Publish
+r.publish(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')
+
+     
+
 
 # Create report
-r = dp.Report(
-    f'### Vagas em Data Science',
-    f'#### - Analista de Dados, Cientista de Dados, Engenheiro de Machine Learning e Engenheiro de Dados',
-    f'### Total Vagas',
-    dp.Plot(fig3),
-    f'### Total Vagas por Estado',
-    dp.Plot(fig1),
-    f'### Total Vagas por Nivel',
-    dp.Plot(fig2),
-    f'### Heatmap de Vagas no Brasil',
-    dp.Plot(mapa))
+#r = dp.Report(
+#    f'### Vagas em Data Science',
+#    f'#### - Analista de Dados, Cientista de Dados, Engenheiro de Machine Learning e Engenheiro de Dados',
+#    f'### Total Vagas',
+#    dp.Plot(fig3),
+#    f'### Total Vagas por Estado',
+#    dp.Plot(fig1),
+#    f'### Total Vagas por Nivel',
+#    dp.Plot(fig2),
+#    f'### Heatmap de Vagas no Brasil',
+#    dp.Plot(mapa))
 
 # Publish
-r.publish(name=f'Vagas em Data Science', open=True, description=f'Vagas coletadas via Web Scrap - primeiras 15 páginas de cada cargo')
+#r.publish(name=f'Vagas em Data Science', open=True, description=f'Vagas coletadas via Web Scrap - primeiras 15 páginas de cada cargo')
