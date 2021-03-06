@@ -145,6 +145,7 @@ df3['cidade']= remove_accents(df3['cidade'])
 
 df3 = pd.merge(df3, df_cidade, on = 'cidade')
 
+df3.drop(columns=['codigo_uf', 'codigo_ibge'], inplace=True)
 
-df3.to_csv("vagas-ds.csv", columns = ['Cargo', 'Local', 'Empresa', 'Descricao', 'Link', 'nivel', 'vaga',
-       'cidade', 'estado', 'latitude', 'longitude'],index=False)
+
+df3.to_csv("vagas-ds.csv")
