@@ -3,6 +3,8 @@ import pandas as pd
 import re
 import numpy as np
 
+pd.options.mode.chained_assignment = None
+
 def remove_accents(coluna):
     text=[]
     for name in coluna:
