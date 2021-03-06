@@ -73,8 +73,8 @@ temp_de_dados = temp_A[~temp_A.Cargo.str.contains('estágio')] # Exclui estágio
 temp_de_dados
 
 df_AD2 = temp_de_dados
-df_AD2['nivel'] = np.where(df_AD2.Cargo == 'analista de dados senior', 'senior ', np.where (df_AD2.Cargo == 'analista de dados pleno', 'pleno', np.where(df_AD2.Cargo == 'analista de dados jr 01 vaga', 'junior', np.where(df_AD2.Cargo == "analista de dados", 'senior', np.where(df_AD2.Cargo == 'analista de dados pl', 'pleno', 'senior')))))
-
+temp = np.where(df_AD2.Cargo == 'analista de dados senior', 'senior ', np.where (df_AD2.Cargo == 'analista de dados pleno', 'pleno', np.where(df_AD2.Cargo == 'analista de dados jr 01 vaga', 'junior', np.where(df_AD2.Cargo == "analista de dados", 'senior', np.where(df_AD2.Cargo == 'analista de dados pl', 'pleno', 'senior')))))
+df_AD2['nivel'] = temp
 
 
 df_AD2['Cargo'] = remove_accents(df_AD2['Cargo'])
@@ -94,8 +94,8 @@ df_CD['Cargo'] = remove_accents(df_CD['Cargo'])
 df_CD2 = df_CD[df_CD['Cargo'].str.contains(r'cientista de (?!$)')]
 df_CD2['vaga'] = 'cientista de dados'
 
-df_CD2['nivel'] = np.where(df_CD2.Cargo == 'cientista de dados - senior', 'senior ', np.where (df_CD2.Cargo == 'cientista de dados - pleno', 'pleno', np.where(df_CD2.Cargo == 'cientista de dados jr', 'junior', np.where(df_CD2.Cargo == "cientista de dados", 'senior', np.where(df_CD2.Cargo == "cientista de dados pl", 'pleno', np.where(df_CD2.Cargo == "cientista de dados - pl", 'pleno', 'senior'))))))
-
+temp  = np.where(df_CD2.Cargo == 'cientista de dados - senior', 'senior ', np.where (df_CD2.Cargo == 'cientista de dados - pleno', 'pleno', np.where(df_CD2.Cargo == 'cientista de dados jr', 'junior', np.where(df_CD2.Cargo == "cientista de dados", 'senior', np.where(df_CD2.Cargo == "cientista de dados pl", 'pleno', np.where(df_CD2.Cargo == "cientista de dados - pl", 'pleno', 'senior'))))))
+df_CD2['nivel'] = temp
 
 """### Tratemento no dataset EML"""
 
@@ -113,10 +113,13 @@ df_ED['Cargo'] = remove_accents(df_ED['Cargo'])
 df_ED2 = df_ED[df_ED['Cargo'].str.contains(r'engenheiro de dados')]
 
 
-df_ED2['nivel'] = np.where(df_ED2.Cargo == 'engenheiro de dados senior', 'senior ', 
+temp = np.where(df_ED2.Cargo == 'engenheiro de dados senior', 'senior ', 
 np.where (df_ED2.Cargo == 'engenheiro de dados pleno', 'pleno', 
 np.where(df_ED2.Cargo == 'engenheiro de dados junior', 'junior', 
 np.where(df_ED2.Cargo == "engenheiro de dados", 'senior', 'senior'))))
+
+df_ED2['nivel'] = temp
+
 
 df_ED2['vaga'] = 'engenheiro de dados'
 
