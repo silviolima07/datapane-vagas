@@ -7,13 +7,15 @@ from datetime import date
 from folium import plugins
 import folium
 import plotly.express as px
+import sys
 
 import plotly.io as pio
 pio.templates.default = "plotly_dark"
 
+token_datapane = sys.argv[1]
 
 # Sign-in with your unique token
-dp.login(token="429c0773e39cc7b0a0a2aa7ed74e85edeea6d7b5")
+dp.login(token= token_datapane)
 
 
 
