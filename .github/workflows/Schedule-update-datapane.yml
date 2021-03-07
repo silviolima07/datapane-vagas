@@ -27,7 +27,7 @@ jobs:
       run: pip install plotly-express      
  
     - name: running script indeed.py                                
-      run: python indeed.py
+      run: python indeed.py ${{ secrets.datapane_token }}
       
     - name: Listar directory                            
       run: ls -la  

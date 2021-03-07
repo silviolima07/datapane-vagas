@@ -14,16 +14,8 @@ pio.templates.default = "plotly_dark"
 
 token_datapane = sys.argv[1]
 
-# Sign-in with your unique token
-<<<<<<< HEAD
 dp.login(token= token_datapane)
 =======
-# From secrets
-datapane_token = ${{ secrets.datapane_token }}
-dp.login(token= datapane_token)
->>>>>>> 17507db3522a8dd88705c8cdcb5f0c0f8a61e80c
-
-
 
 cidades = pd.read_csv("cidades.csv")
 df_vagas = pd.read_csv("vagas-ds.csv")
