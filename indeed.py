@@ -15,7 +15,6 @@ pio.templates.default = "plotly_dark"
 token_datapane = sys.argv[1]
 
 dp.login(token= token_datapane)
-=======
 
 cidades = pd.read_csv("cidades.csv")
 df_vagas = pd.read_csv("vagas-ds.csv")
