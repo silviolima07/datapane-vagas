@@ -14,7 +14,7 @@ pio.templates.default = "plotly_dark"
 
 # Sign-in with your unique token
 # From secrets
-datapane_token = ${datapane_token}
+datapane_token = ${{ secrets.datapane_token }}
 dp.login(token= datapane_token)
 
 
