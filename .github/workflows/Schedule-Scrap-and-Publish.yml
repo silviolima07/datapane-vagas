@@ -41,6 +41,9 @@ jobs:
       steps:
        - name: Scraping data EML
          run: python scrap/scrap-indeed.py 'engenheiro de machine learning'
+         
+       - name: Listar diretorio
+         run: ls -l  
   
         
                    
