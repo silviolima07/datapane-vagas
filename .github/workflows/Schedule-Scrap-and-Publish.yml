@@ -7,10 +7,6 @@ name: Schedule scrap and publish
 
 on:
 
-
-
-
-
    workflow_dispatch:
    
 jobs:                          
@@ -44,8 +40,14 @@ jobs:
        - name: Scraping data EML
          run: python scrap/scrap-indeed.py 'engenheiro de machine learning'
          
-       - name: Listar diretorio
-         run: ls -l  
+       - name: Scraping data ED
+         run: python scrap/scrap-indeed.py 'engenheiro de dados'  
+         
+       - name: Copy csv files to CSV
+         run: cp indeed*.csv CSV
+         
+       - name: Listar diretorio CSV
+         run: ls -l CSV    
   
         
                    
