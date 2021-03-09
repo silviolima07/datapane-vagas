@@ -27,5 +27,5 @@ jobs:
       run: pip install plotly-express      
  
     - name: running updating datapane                                
-      run: python datapane.py ${{ secrets.datapane_token }}
+      run: python indeed.py ${{ secrets.datapane_token }}
         
