@@ -36,6 +36,7 @@ jobs:
    scrap_EML:
       runs-on: ubuntu-latest
       steps:
+       - uses: actions/checkout@v2
        - name: Scraping data EML
          run: python scrap/scrap-indeed.py 'engenheiro de machine learning'
          
