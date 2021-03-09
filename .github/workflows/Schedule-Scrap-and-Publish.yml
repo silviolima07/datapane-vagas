@@ -1,16 +1,9 @@
-
-
-
-
-
 name: Schedule scrap and publish
-
 on:
-
    workflow_dispatch:
    
 jobs:                          
-   install_packages:
+   install_packages_and_scrap:
       runs-on: ubuntu-latest
       steps:
        - uses: actions/checkout@v2
