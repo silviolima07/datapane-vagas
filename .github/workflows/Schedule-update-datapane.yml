@@ -6,7 +6,7 @@ on:
 jobs:                          
 
   update_publish_datapane:                            
-    name: publish datapane indeed                        
+    name: update and publish datapane                       
     runs-on: ubuntu-latest     
     steps:                             
     - name: Check-out the repo under $GITHUB_WORKSPACE                               
