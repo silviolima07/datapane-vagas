@@ -17,9 +17,16 @@ jobs:
       with:                                 
         python-version: '3.8'          
                                                   
+    - name: Install libs                             
+      run: |
+           pip install altair
+           pip install plotly-express
+           pip install datapane
+           
+      
     - name: Install altair                              
       run: pip install altair
-    
+      
     - name: Install datapane                               
       run: pip install datapane
 
@@ -27,5 +34,5 @@ jobs:
       run: pip install plotly-express      
  
     - name: running updating datapane                                
-      run: python indeed.py ${{ secrets.datapane_token }}
+      run: python datapane_indeed.py ${{ secrets.datapane_token }}
         
