@@ -1,10 +1,15 @@
+
+
+
+
+
+
+
+
 name: Schedule publish datapane                                              
-
 on:
-   workflow_dispatch:
-   
+   workflow_dispatch:  
 jobs:                          
-
   update_publish_datapane:                            
     name: update and publish datapane                       
     runs-on: ubuntu-latest     
@@ -15,24 +20,13 @@ jobs:
     - name: Set up Python 3.8                               
       uses: actions/setup-python@v2                               
       with:                                 
-        python-version: '3.8'          
-                                                  
-    #- name: Install libs                             
-    #  run: |
-    #       pip install altair
-    #       pip install plotly-express
-    #       pip install datapane
-           
+        python-version: '3.8'                                                           
+    - name: Install libs                          
+      run: | 
+           pip install altair
+           pip install plotly-express
+           pip install datapane     
       
-    - name: Install altair                              
-      run: pip install altair
-      
-    - name: Install datapane                               
-      run: pip install datapane
-
-    - name: Install plotly-express                             
-      run: pip install plotly-express      
- 
     - name: running updating datapane                                
       run: python datapane_indeed.py ${{ secrets.datapane_token }}
         
