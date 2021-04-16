@@ -34,7 +34,13 @@ jobs:
          run: python scrap/scrap-indeed.py 'engenheiro de machine learning'
          
        - name: Scraping data ED
-         run: python scrap/scrap-indeed.py 'engenheiro de dados'  
+         run: python scrap/scrap-indeed.py 'engenheiro de dados' 
+         
+       - name: Scraping data CD
+         run: python scrap/scrap-indeed.py 'cientista de dados' 
+         
+       - name: Scraping data AD
+         run: python scrap/scrap-indeed.py 'analista de dados'   
          
        - name: Copy csv files to CSV
          run: cp indeed*.csv CSV
