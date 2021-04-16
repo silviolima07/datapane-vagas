@@ -16,6 +16,7 @@ jobs:
     - name: Install libs                          
       run: | 
            pip install altair
+           pip install folium
            pip install plotly-express
            pip install datapane     
       
