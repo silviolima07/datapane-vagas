@@ -67,7 +67,46 @@ mapa.add_child(plugins.HeatMap(coordenadas))
 #######################
 
 # Create report
+  
+ pagina1 = dp.Page(
+       label="Dashes",
+       blocks=[
+               "#### Heatmap de Vagas pelo Brasil", 
+               dp.Plot(mapa),
+               "#### Total Vagas", 
+               dp.Plot(fig3),
+               "#### Total Vagas por Estado", 
+               dp.Plot(fig1),
+               "#### Total Vagas por Nível", 
+               dp.Plot(fig2)
+               ]
+     )
 
+pagina2 = dp.Page(
+       label="Cientista de Dados",
+       blocks=["#### Vagas - Cientista de Dados",
+       dp.DataTable(df_CD[colunas], label="Cientista de Dados")]
+     )
+
+pagina3 = dp.Page(
+       label="Analista de Dados",
+       blocks=["#### Vagas Analista de Dados", 
+       dp.DataTable(df_AD[colunas], label= "Analista de Dados")]
+     )
+
+pagina4 = dp.Page(
+       label="Engenheiro de Dados",
+       blocks=["#### Vagas - Engenheiro de Dados", 
+       dp.DataTable(df_ED[colunas], label = "Engenheiro de Dados")]
+     )
+
+pagina5 = dp.Page(
+       label="Engenheiro de Machine Learning",
+       blocks=["#### Vagas - Engenheiro de Machine Learning", 
+       dp.DataTable(df_EML[colunas], label = "Engenheiro de Machine Learning")]
+     )
+
+"""
 r = dp.Report(
     dp.Page(
        label="Dashes",
@@ -103,8 +142,10 @@ r = dp.Report(
        dp.DataTable(df_EML[colunas], label = "Engenheiro de Machine Learning")]
      )
     )
+      
 r
 # Publish
 r.publish(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')
+"""
 
-     
+ dp.Report(pagina1, pagina2).publish(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')    
