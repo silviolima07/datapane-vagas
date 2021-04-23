@@ -70,7 +70,7 @@ mapa.add_child(plugins.HeatMap(coordenadas))
 
 r = dp.Report(
     dp.Page(
-       label='Dashes',
+       label="Dashes",
        blocks=[
                "#### Heatmap de Vagas pelo Brasil", 
                dp.Plot(mapa),
@@ -83,30 +83,25 @@ r = dp.Report(
                ]
      ),
     dp.Page(
-       label='Cientista de Dados',
+       label="Cientista de Dados",
        blocks=["#### Vagas - Cientista de Dados",
        dp.DataTable(df_CD[colunas], label="Cientista de Dados")]
      ),
     dp.Page(
-       label='Analista de Dados',
+       label="Analista de Dados",
        blocks=["#### Vagas Analista de Dados", 
        dp.DataTable(df_AD[colunas], label= "Analista de Dados")]
      ),
     dp.Page(
-       label='Engenheiro de Dados',
+       label="Engenheiro de Dados",
        blocks=["#### Vagas - Engenheiro de Dados", 
        dp.DataTable(df_ED[colunas], label = "Engenheiro de Dados")]
      ),
     dp.Page(
-       label='Engenheiro de Machine Learning',
+       label="Engenheiro de Machine Learning",
        blocks=["#### Vagas - Engenheiro de Machine Learning", 
        dp.DataTable(df_EML[colunas], label = "Engenheiro de Machine Learning")]
      )
-    
-
-    
-    
-
     )
 r
 # Publish
