@@ -18,7 +18,7 @@ jobs:
            pip install altair
            pip install folium
            pip install plotly-express
-           pip install datapane== 0.11.1    
+           pip install -U datapane OR pip install --user -U datapane   
       
     - name: running updating datapane                                
       run: python datapane_indeed.py ${{ secrets.datapane_token }}
