@@ -65,7 +65,7 @@ mapa.add_child(plugins.HeatMap(coordenadas))
 #mapa.get_root().html.add_child(folium.Element(title_html))
 
 #######################
-
+"""
 # Create report
 pagina1 = dp.Page(
        title="Dashes",
@@ -108,7 +108,7 @@ pagina5 = dp.Page(
 """
 r = dp.Report(
     dp.Page(
-       label="Dashes",
+       title="Dashes",
        blocks=[
                "#### Heatmap de Vagas pelo Brasil", 
                dp.Plot(mapa),
@@ -121,22 +121,22 @@ r = dp.Report(
                ]
      ),
     dp.Page(
-       label="Cientista de Dados",
+       title="Cientista de Dados",
        blocks=["#### Vagas - Cientista de Dados",
        dp.DataTable(df_CD[colunas], label="Cientista de Dados")]
      ),
     dp.Page(
-       label="Analista de Dados",
+       title="Analista de Dados",
        blocks=["#### Vagas Analista de Dados", 
        dp.DataTable(df_AD[colunas], label= "Analista de Dados")]
      ),
     dp.Page(
-       label="Engenheiro de Dados",
+       title="Engenheiro de Dados",
        blocks=["#### Vagas - Engenheiro de Dados", 
        dp.DataTable(df_ED[colunas], label = "Engenheiro de Dados")]
      ),
     dp.Page(
-       label="Engenheiro de Machine Learning",
+       title="Engenheiro de Machine Learning",
        blocks=["#### Vagas - Engenheiro de Machine Learning", 
        dp.DataTable(df_EML[colunas], label = "Engenheiro de Machine Learning")]
      )
@@ -145,6 +145,5 @@ r = dp.Report(
 r
 # Publish
 r.publish(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')
-"""
 
-dp.Report(pagina1, pagina2, pagina3,pagina4,pagina5).publish(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')    
+#dp.Report(pagina1, pagina2, pagina3,pagina4,pagina5).publish(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')    
