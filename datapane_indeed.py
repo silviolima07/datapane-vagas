@@ -159,4 +159,5 @@ dp.Report(
                "#### Total Vagas por Nível", 
                dp.Plot(fig2)
                ]
+  )
     ).upload(name='TESTE')
