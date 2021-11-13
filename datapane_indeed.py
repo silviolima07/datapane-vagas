@@ -160,9 +160,3 @@ dp.Report(
                dp.Plot(fig2)
                ]
      ).upload(name='TESTE')
-
-
-#dp.Report(pagina1, pagina2, pagina3,pagina4,pagina5).publish(name=f'Vagas em Data Science', 
-#open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning').upload(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')
-#
-#
