@@ -142,4 +142,4 @@ r = dp.Report(
      )
     )
       
-r.upload(name='Vagas em Data Science from indeed', open = True, description='Vagas')
+r.upload(name='Vagas em Data Science', open = True, description='Vagas')
