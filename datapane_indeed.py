@@ -146,5 +146,21 @@ r = dp.Report(
 # Publish
 #r.upload(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')
 
+dp.Report(
+  dp.Page(
+       title="Dashes",
+       blocks=[
+               "#### Heatmap de Vagas pelo Brasil", 
+               dp.Plot(mapa),
+               "#### Total Vagas", 
+               dp.Plot(fig3),
+               "#### Total Vagas por Estado", 
+               dp.Plot(fig1),
+               "#### Total Vagas por Nível", 
+               dp.Plot(fig2)
+               ]
+     ).upload(name='TESTE')
+
+
 dp.Report(pagina1, pagina2, pagina3,pagina4,pagina5).publish(name=f'Vagas em Data Science', 
 open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning').upload(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')    
