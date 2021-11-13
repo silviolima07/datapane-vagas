@@ -142,8 +142,9 @@ r = dp.Report(
      )
     )
       
-r
+#r
 # Publish
-r.publish(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')
+#r.upload(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')
 
-#dp.Report(pagina1, pagina2, pagina3,pagina4,pagina5).publish(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')    
+dp.Report(pagina1, pagina2, pagina3,pagina4,pagina5).publish(name=f'Vagas em Data Science', 
+open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning').upload(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')    
