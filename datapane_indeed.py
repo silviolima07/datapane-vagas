@@ -159,24 +159,4 @@ dp.Report(
                "#### Total Vagas por Nível", 
                dp.Plot(fig2)
                ]
-     ).upload(name='TESTE')
-  
-#import seaborn as sns
-#import altair as alt 
-#import datapane as dp
-#titanic = sns.load_dataset("titanic")
-#points = alt.Chart(titanic).mark_point().encode(
-#    x='age:Q',
-#    color='class:N',
-#    y='fare:Q',
-#).interactive().properties(width='container')
-#dp.Report(
-#  dp.Page(
-#    title="Titanic Dataset",
-#    blocks=["### Dataset", titanic]
-#  ),
-#  dp.Page(
-#    title="Titanic Plot",
-#    blocks=["### Plot", points]
-#  )
-#).upload(name='altair_example_pages')
+    ).upload(name='TESTE')
