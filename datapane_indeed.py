@@ -146,17 +146,37 @@ r = dp.Report(
 # Publish
 #r.upload(name=f'Vagas em Data Science', open = True, description='Vagas ---> Cientista de Dados, Analista de Dados, Engenheiro de Dados e Engenheiro de Machine Learning')
 
+#dp.Report(
+#  dp.Page(
+#       title="Dashes",
+#       blocks=[
+#               "#### Heatmap de Vagas pelo Brasil", 
+#               dp.Plot(mapa),
+#               "#### Total Vagas", 
+#               dp.Plot(fig3),
+#               "#### Total Vagas por Estado", 
+#               dp.Plot(fig1),
+#               "#### Total Vagas por Nível", 
+#               dp.Plot(fig2)
+#               ]
+#     ).upload(name='TESTE')
+  
+import seaborn as sns
+import altair as alt 
+import datapane as dp
+titanic = sns.load_dataset("titanic")
+points = alt.Chart(titanic).mark_point().encode(
+    x='age:Q',
+    color='class:N',
+    y='fare:Q',
+).interactive().properties(width='container')
 dp.Report(
   dp.Page(
-       title="Dashes",
-       blocks=[
-               "#### Heatmap de Vagas pelo Brasil", 
-               dp.Plot(mapa),
-               "#### Total Vagas", 
-               dp.Plot(fig3),
-               "#### Total Vagas por Estado", 
-               dp.Plot(fig1),
-               "#### Total Vagas por Nível", 
-               dp.Plot(fig2)
-               ]
-     ).upload(name='TESTE')
+    title="Titanic Dataset",
+    blocks=["### Dataset", titanic]
+  ),
+  dp.Page(
+    title="Titanic Plot",
+    blocks=["### Plot", points]
+  )
+).upload(name='altair_example_pages')
