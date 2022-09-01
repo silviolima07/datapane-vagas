@@ -24,7 +24,7 @@ cargo=[]
 local=[]
 empresa=[]
 descricao=[]
-link_url=[]
+#link_url=[]
 
 #CARGO = 'Analista de dados'
 
@@ -102,10 +102,11 @@ driver.quit()
 data = {'Cargo': cargo,
         'Local': local,
         'Empresa': empresa,
-        'Descrição': descricao,
-        'Link' : link_url}
+        'Descrição': descricao}
+        #,
+        #'Link' : link_url}
 
-df = pd.DataFrame(data, columns=["Cargo", "Local", "Empresa","Descrição", "Link"])
+df = pd.DataFrame(data, columns=["Cargo", "Local", "Empresa","Descrição"]) #, "Link"])
 df_final = df.drop_duplicates()
 
 cargo = CARGO.replace(' ', '_')
