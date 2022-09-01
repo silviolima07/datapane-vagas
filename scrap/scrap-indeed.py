@@ -5,6 +5,7 @@ from checar_parametros import buscar_campos
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options  as FirefoxOptions
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
 
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -59,14 +60,14 @@ driver.get("https://br.indeed.com/empregos?as_ttl=&l=Brasil&sort=date&radius=25&
 driver.implicitly_wait(50)
 
 # Advanced search
-advanced_search = driver.find_element_by_xpath("//a[contains(text(),'Busca Avançada de Vagas')]")
+advanced_search = driver.find_element(By.XPATH,"//a[contains(text(),'Busca Avançada de Vagas')]")
 advanced_search.click()
 
 # Enviar na pagina na linha as_ttl, para usar as palavras em CARGO na busca
-search_job = driver.find_element_by_xpath('//*[@id="as_ttl"]')
+search_job = driver.find_element(By.XPATH,'//*[@id="as_ttl"]')
 search_job.send_keys([CARGO])
 # Apos envio acionar botao para iniciar busca
-search_button = driver.find_element_by_xpath('//*[@id="fj"]')
+search_button = driver.find_element(By.XPATH,'//*[@id="fj"]')
 search_button.click()
 
 # Guarda a nova url com o CARGO incluido na busca desejada
@@ -77,7 +78,7 @@ url_page = driver.current_url
 
 # Total de vagas encontradas
 # Página 1 de 6,vagas
-total_vagas = driver.find_element_by_xpath('//*[@id="searchCountPages"]').text
+total_vagas = driver.find_element(By.XPATH,'//*[@id="searchCountPages"]').text
 
 total_vagas = total_vagas.replace('Página 1 de', '')
 total_vagas = total_vagas.replace('vagas', '')
@@ -88,7 +89,7 @@ print("\nCargo:", CARGO)
 print("Total de vagas:", total_vagas)
     
 # Identificar na pagina retornada a classe com os resultado da busca
-#all_jobs = driver.find_elements_by_class_name('result')
+#all_jobs = driver.find_elements(By.CLASS_NAME,'result')
  
 #print("Page: {}".format(str(int((i+10)/10))))
 
