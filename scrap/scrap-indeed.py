@@ -60,7 +60,7 @@ driver.get("https://br.indeed.com/empregos?as_ttl=&l=Brasil&sort=date&radius=25&
 driver.implicitly_wait(50)
 
 # Advanced search
-advanced_search = driver.find_element(By.XPATH,"//a[contains(text(),'Busca Avançada de Vagas')]")
+advanced_search = driver.find_element(By.XPATH,"//a[contains(text(),'Achar vagas')]")
 advanced_search.click()
 
 # Enviar na pagina na linha as_ttl, para usar as palavras em CARGO na busca
